@@ -155,6 +155,28 @@
 <div class="index-footer">
     技术支持：徐州溜溜云网络有限公司
 </div>
+<!--返回顶部、返回首页、返回上一页按钮组-->
+<div class="go-top" >
+    <a id="go-top" href="javascript:;" class="go" style="display: none">
+        <div class="center-box">
+            <i class="fa fa-angle-up"></i>
+            <p>顶部</p>
+        </div>
+    </a>
+    <a href="index.html" target="_self">
+        <div class="center-box">
+            <i class="fa fa-home"></i>
+            <p>首页</p>
+        </div>
+    </a>
+    <a href="javascript:;" onclick="history.go(-1)">
+        <div class="center-box">
+            <i class="fa fa-reply"></i>
+            <p>返回</p>
+        </div>
+    </a>
+</div>
+
 <!--底部推广栏-->
 <div class="bottom-fix-banner">
     <a href="#" class="bottom-fix-banner-close"><i class="fa fa-close"></i> </a>
@@ -199,6 +221,24 @@
         $(".bottom-fix-banner").animate({left:'0'},"slow");
         return false;
     });
+//    返回顶部按钮组
+    $(function() {
+        $(window).on('scroll', function () {
+            var st = $(document).scrollTop();
+            if (st > 0) {
+                $('.go').fadeIn(function () {
+                    $(this).fadeIn();
+                });
+            } else {
+                $('.go').fadeOut(function () {
+                    $(this).fadeOut();
+                });
+            }
+        });
+        $('.go').on('click', function () {
+            $('html,body').animate({'scrollTop': 0}, 400)
+        })
+    })
 </script>
 </body>
 </html>
