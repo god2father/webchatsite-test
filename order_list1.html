@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预订页-提交订单1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="order-list1-content">
+    <div class="order-list1-content-hjhh">
+        <p>优雅普吉无敌海景豪华8天7晚自助游</p>
+        <p>海口民间旅行社</p>
+    </div>
+    <div class="order-list1-content-hjhh">
+        <i>徐州出发：8天7晚 &nbsp;&nbsp;跟团游</i>
+    </div>
+    <div class="order-list1-content-hjhh">
+        <span>发团日期：</span>
+        <span class="order-list1-cztq">
+            <select>
+                <option value="">请选择团期</option>
+            </select>
+        </span>
+    </div>
+    <div class="linegray"></div>
+    <form action="order_list1-1.html">
+    <div class="order-list1-content-people">
+        <span>成人价：<b>¥1858/人</b></span>
+        <p class="order-list1-content-people-add">
+            <a href="#" class="order-list1-content-people-add-minus">-</a>
+            <input class="order-list1-content-people-add-input" type="text" value="1">
+            <a href="#" class="order-list1-content-people-add-plus">+</a>
+        </p>
+    </div>
+    <div class="order-list1-content-people">
+        <span>儿童价：<b>¥1358/人</b></span>
+        <i>（不占床位）</i>
+        <p class="order-list1-content-people-add">
+            <a href="#" class="order-list1-content-people-add-minus">-</a>
+            <input class="order-list1-content-people-add-input"  type="text" value="0">
+            <a href="#" class="order-list1-content-people-add-plus">+</a>
+        </p>
+    </div>
+    <div class="order-list1-content-people">
+        <span>婴儿价：<b>¥1358/人</b></span>
+        <i>（不占床位）</i>
+        <p class="order-list1-content-people-add">
+            <a href="#" class="order-list1-content-people-add-minus">-</a>
+            <input class="order-list1-content-people-add-input" type="text" value="0">
+            <a href="#" class="order-list1-content-people-add-plus">+</a>
+        </p>
+    </div>
+    <div class="linegray"></div>
+    <div class="order-list1-content-person">
+        <label>联系人<input type="text" placeholder="填写联系人姓名"> </label>
+    </div>
+    <div class="order-list1-content-person">
+        <label>手机号码<input type="text" class="order-list1-content-input" placeholder="填写联系人手机号码"> </label>
+    </div>
+    <div class="linewhite"></div>
+    <div class="linegray"></div>
+    <div class="order-list1-content-order">
+        <p>订单总额：<i>¥</i> <b>3580</b></p>
+    </div>
+    <button type="submit" class="order-list1-content-button">提交订单</button>
+    </form>
+</div>
+<div class="index-footer">
+    技术支持：徐州溜溜云网络有限公司
+</div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready (function ()
+    {
+        $ (".order-list1-content-people-add-minus").click (function ()
+        {
+            var me = $ (this), txt = me.next (":text");
+            var val = parseFloat (txt.val ());
+            val = val < 1 ? 1 : val;
+            txt.val (val - 1);
+        });
+
+        $(".order-list1-content-people-add-plus").click (function ()
+        {
+            var me = $ (this), txt = me.prev (":text");
+            var val = parseFloat (txt.val ());
+            txt.val (val + 1);
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+.calendar{overflow: hidden;width: 100%;margin-top: 10px;margin-bottom: 10px}
+.calendar-box{margin-bottom: 10px}
+.calendar .month{overflow: hidden;background: #29abe2;height: 50px}
+.calendar .month .clearfix{overflow: hidden;height: 50px}
+.calendar .week{background: #dff4fd}
+.calendar table{background: #FFF;width: 100%;}
+.calendar .week th{color: #333;overflow: hidden;text-align: center;}
+.calendar .week th.weekEnd{color: #ed1c24}
+.calendar .month th div{background: #29abe2;color: #fff;margin-top: 5px;}
+.calendar .month th .prevMonth,.calendar .month th .nextMonth{float: left;width: 19%;background: #29abe2;height: 80%;text-align: center;margin-top: 5px;}
+.calendar .month th .prevMonth a,.calendar .month th .nextMonth a{color: #fff;display: inline-block;padding-top: 8px;}
+.calendar .month th .prevMonth {border-right: 1px solid #fff}
+.calendar .month th .nextMonth {border-left: 1px solid #fff}
+.calendar .month th .dates{float: left;width:60%;text-align: center;padding-top:8px;}
+.calendar .month th .dates em{font: bold 16px/22px Arial,Helvetica,sans-serif;}
+.calendar .month th a.prev0{cursor: not-allowed;}
+.calendar .month th a.next{}
+.calendar .month th a.next:hover{}
+.calendar .month th a.next0{cursor: not-allowed;}
+.calendar td{border:1px solid #c3eafc;border-radius: 3px 3px 0 3px;width: 12%;overflow: hidden;position: relative;}
+.calendar td.cur{background: #f15a24;color: #ffffff}
+.calendar td.hover{cursor: pointer;background: #f15a24;color: #ffffff;}
+.calendar td p{display: block;margin: 0;height: 60px;}
+.calendar td em{font-family: Arial;font-size: 10px;padding: 5px 0 0 2px;}
+.calendar td em.money{color: #F60;font-weight: bold;font-size: 10px;}
+.calendar td span{
+    display: block;
+    font-size: 8px;
+    white-space: nowrap;
+    letter-spacing: -1px;
+}
