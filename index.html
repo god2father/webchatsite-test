@@ -88,6 +88,31 @@
                 <h1>热推产品</h1>
             </a>
         </div>
+
+    <div class=" index-container1-bg1 index-container1-bg-color1 wow shake"  data-wow-iteration="5" data-wow-duration="0.15s" >
+        <a href="menu_page.html">
+            <img src="images/index-container1.png">
+            <h1>芽庄专线</h1>
+        </a>
+    </div>
+    <div class="index-container1-bg1 index-container1-bg-color2 wow swing">
+        <a href="menu_page.html">
+            <img src="images/index-container1.png">
+            <h1>厦门专线</h1>
+        </a>
+    </div>
+    <div class="index-container1-bg1 index-container1-bg-color3 wow tada">
+        <a href="menu_page.html">
+            <img src="images/index-container1.png">
+            <h1>巴厘岛专线</h1>
+        </a>
+    </div>
+    <div class="index-container1-bg1 index-container1-bg-color4 wow wobble">
+        <a href="menu_page.html">
+            <img src="images/index-container1.png">
+            <h1>越南专线</h1>
+        </a>
+    </div>
         <!--<div class="index-container1-bg1 index-container1-bg-color6 wow lightSpeedIn" data-wow-offset="200">-->
             <!--<a href="menu_page.html">-->
                 <!--<img src="images/index-container2.png">-->
@@ -184,10 +209,12 @@
 <div class="bottom-fix-banner-open">
     <a href="#"><i class="fa fa-caret-right"></i> </a>
 </div>
+<!--加载js文件-->
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/wow.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
 <script>
     wow = new WOW(
             {
@@ -238,7 +265,16 @@
         $('.go').on('click', function () {
             $('html,body').animate({'scrollTop': 0}, 400)
         })
-    })
+    });
+//    滚动条nicescroll
+    $("html").niceScroll({
+        cursorcolor:"#4d4d4d",
+        cursoropacitymax:1,
+        touchbehavior:false,
+        cursorwidth:"5px",
+        cursorborder:"0",
+        cursorborderradius:"5px"
+    });
 </script>
 </body>
 </html>
