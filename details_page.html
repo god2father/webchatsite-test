@@ -202,10 +202,34 @@
     </a>
     <a class="a-tel" href="tel:18605160717">廖宏伟<br><i class="fa fa-phone"></i>18605160717 </a>
 </div>
+
+<!--返回顶部、返回首页、返回上一页按钮组-->
+<div class="go-top" >
+    <a id="go-top" href="javascript:;" class="go" style="display: none">
+        <div class="center-box">
+            <i class="fa fa-angle-up"></i>
+            <p>顶部</p>
+        </div>
+    </a>
+    <a href="index.html" target="_self">
+        <div class="center-box">
+            <i class="fa fa-home"></i>
+            <p>首页</p>
+        </div>
+    </a>
+    <a href="javascript:;" onclick="history.go(-1)">
+        <div class="center-box">
+            <i class="fa fa-reply"></i>
+            <p>返回</p>
+        </div>
+    </a>
+</div>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Calendar.js"></script>
 <script src="js/fun.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/js.js"></script>
 <script type="text/javascript">
     //c:容器,y:年,m:月,a:出发时间json,f:是否显示双日历,fu:回调调
     var para={'c':'calendarcontainer',

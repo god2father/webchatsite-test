@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <style>
+        #test{
+            margin: 100px auto;
+            height:360px;
+            background: url("images/banner1.jpg") no-repeat;
+            width: 640px;
+            float: left;
+            /*animation: myfirst 2s ease-in-out 1 ;*/
+        }
+        .myfirst{
+            width: 640px;
+            height:360px;
+            overflow: hidden;
+            background: url("images/line-go.png") no-repeat;
+            animation: myfirst 5s ease-in-out 1 ;
+        }
+        .myfirst img{
+            width: 640px;
+            height:360px;
+        }
+        @keyframes myfirst
+        {
+           from{width: 0}
+            to{width: 640px;}
+        }
+    </style>
+</head>
+<body>
+<section id="test">
+    <div class="myfirst">
+        <!--<img src="images/line-go.png">-->
+    </div>
+</section>
+<script src="js/jquery-1.11.3.min.js"></script>
+<!--<script>-->
+    <!--$("#test").animate({-->
+        <!--width:'640px',-->
+        <!--left:'0'-->
+    <!--},8000)-->
+<!--</script>-->
+</body>
+</html>
