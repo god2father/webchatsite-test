@@ -34,14 +34,104 @@
            from{width: 0}
             to{width: 640px;}
         }
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #countdown {
+            clear: both;
+            background: #337AB7;
+            font-size: 20px;;
+            width: 100%;
+            margin: 0 auto;
+            background-image: none;
+            color: #fff;
+            padding: 100px;
+            font-weight: bolder;
+        }
+        #countdown ul {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        #countdown ul li{
+            /*display: inline-block;*/
+            margin-left: 10px;
+        }
+        #countdown ul li:last-child {
+            margin-right: 10px;
+        }
+
+        #countdown ul li strong {
+            text-shadow: 5px 5px 5px #000;
+        }
+        #countdown ul li strong,  #countdown ul li span {
+            display: block;
+            text-align: center;
+        }
+        #sec {
+            color: #ff0000;
+            /*text-shadow: 5px 5px 2px #ff0000;*/
+        }
+        /**/
+        /**/
+        /**/
+        a {
+            display: inline-block;
+            background-color: #18bcb5;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        a:after {
+            content: " ";
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top:0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        a:hover:after {
+            animation: anims 1s;
+        }
+
+        @keyframes anims {
+            from {
+                background: rgba(118,235, 230, 0.25);
+                transform: scale(0);
+            }
+            to {
+                background: transparent;
+                transform: scale(2);
+            }
+        }
     </style>
 </head>
 <body>
-<section id="test">
+<section id="test" >
     <div class="myfirst">
+        <a href="">test</a>
         <!--<img src="images/line-go.png">-->
     </div>
 </section>
+<div id="countdown"  >
+
+            <strong id="day">00天</strong>
+
+            <strong id="hour">00小时</strong>
+
+            <strong  id="min">00分钟</strong>
+
+            <strong  id="sec">00秒</strong>
+
+    </ul>
+</div>
 <script src="js/jquery-1.11.3.min.js"></script>
 <!--<script>-->
     <!--$("#test").animate({-->
@@ -49,5 +139,58 @@
         <!--left:'0'-->
     <!--},8000)-->
 <!--</script>-->
+<script>
+    setTimeout("cont_time()",1000);
+    // 首先设定一个结束时间,时间通过new Date()来进行创建. 这样才能够计算倒计时的时间.
+    var end_time=new Date("2016-02-22 13:44:50");
+    // 时间换算规则
+    var t_day = 60 * 60 * 24;
+    var t_hour = 60 * 60;
+    var t_min = 60;
+    var ele_day = document.getElementById("day");
+    var ele_hour = document.getElementById("hour");
+    var ele_min = document.getElementById("min");
+    var ele_sec = document.getElementById("sec");
+    function cont_time(){
+//        获取当前时间
+        var t_currenttime= new Date();
+//        结束时间减去现在时间得到剩余倒计时时间
+        var result_time =end_time.getTime() - t_currenttime.getTime();
+//        剩余时间换算
+        var t_time= Math.floor(result_time/1000);
+//        alert(t_time());
+        var result_day=Math.floor(t_time/t_day);
+        var result_h=Math.floor(t_time%t_day/t_hour);
+        var result_m=Math.floor(t_time % t_day % t_hour/ t_min);
+        var result_s=Math.floor(t_time % t_day % t_hour % t_min);
+//        时间小于10前面加0
+        if(result_day < 10){
+            result_day = "0"+result_day;
+        }
+        if(result_h < 10){
+            result_h="0"+ result_h;
+        }
+        if(result_m < 10){
+            result_m = "0" + result_m;
+        }
+        if(result_s < 10){
+            result_s = "0" + result_s;
+        }
+//        显示时间
+        ele_day.textContent = result_day+"天";
+        ele_hour.textContent = result_h+"小时";
+        ele_min.textContent = result_m+"分钟";
+        ele_sec.textContent =result_s+"秒";
+        if(result_time>=0){
+            setTimeout("cont_time()",1000)
+        }else{
+            ele_day.textContent ="Time Out";
+            ele_hour.textContent ="";
+            ele_min.textContent = "";
+            ele_sec.textContent ="";
+        }
+    }
+
+</script>
 </body>
 </html>
