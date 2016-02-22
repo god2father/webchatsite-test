@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
 
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 
-    <title>JSµ¹¼ÆÊ±Ô´Âë</title>
+    <title>JSå€’è®¡æ—¶æºç </title>
 
 </head>
 
@@ -14,13 +13,13 @@
 
 <div id="times_container"  style="border:1px; border-color:#999999; border-style:solid; background:#333333; color:#FFFFFF; width:500px; height:40px; line-height:40px; font-size:24px">
 
-    ¾àÀë»î¶¯½áÊø»¹ÓĞ£º<span id="times_day"> </span>Ìì
+    è·ç¦»æ´»åŠ¨ç»“æŸè¿˜æœ‰ï¼š<span id="times_day"> </span>å¤©
 
-    <span id="times_hour"> </span>Ê±
+    <span id="times_hour"> </span>æ—¶
 
-    <span id="times_minute"> </span>·Ö
+    <span id="times_minute"> </span>åˆ†
 
-    <span id="second"> </span>Ãë
+    <span id="second"> </span>ç§’
 
 </div>
 
@@ -28,11 +27,11 @@
 
 <script type="text/javascript"  language="javascript">
 
-    setTimeout("count_down()",1000);//ÉèÖÃÃ¿Ò»Ãëµ÷ÓÃÒ»´Îµ¹¼ÆÊ±º¯Êı
+    setTimeout("count_down()",1000);//è®¾ç½®æ¯ä¸€ç§’è°ƒç”¨ä¸€æ¬¡å€’è®¡æ—¶å‡½æ•°
 
-    //»ñÈ¡ÈİÆ÷ÔªËØ var times_container = document.getElementById("times_container");
+    //è·å–å®¹å™¨å…ƒç´  var times_container = document.getElementById("times_container");
 
-    //¸ù¾İÌì£¬Ê±£¬·Ö£¬ÃëµÄIDÕÒµ½Ïà¶ÔÓ¦µÄÔªËØ
+    //æ ¹æ®å¤©ï¼Œæ—¶ï¼Œåˆ†ï¼Œç§’çš„IDæ‰¾åˆ°ç›¸å¯¹åº”çš„å…ƒç´ 
 
     var time_day = document.getElementById("times_day");
 
@@ -42,60 +41,60 @@
 
     var time_second = document.getElementById("second");
 
-    var time_end = new Date("2016/10/04 09:21:00");  // Éè¶¨»î¶¯½áÊø½áÊøÊ±¼ä
+    var time_end = new Date("2016/10/04 09:21:00");  // è®¾å®šæ´»åŠ¨ç»“æŸç»“æŸæ—¶é—´
 
     time_end = time_end.getTime();
 
 
 
-    //¶¨Òåµ¹¼ÆÊ±º¯Êı
+    //å®šä¹‰å€’è®¡æ—¶å‡½æ•°
 
     function count_down(){
 
-        var time_now = new Date();  // »ñÈ¡µ±Ç°Ê±¼ä
+        var time_now = new Date();  // è·å–å½“å‰æ—¶é—´
 
         time_now = time_now.getTime();
 
-        var time_distance = time_end - time_now;  // Ê±¼ä²î£º»î¶¯½áÊøÊ±¼ä¼õÈ¥µ±Ç°Ê±¼ä
+        var time_distance = time_end - time_now;  // æ—¶é—´å·®ï¼šæ´»åŠ¨ç»“æŸæ—¶é—´å‡å»å½“å‰æ—¶é—´
 
         var int_day, int_hour, int_minute, int_second;
 
         if(time_distance >= 0) {
 
-            // Ïà¼õµÄ²îÊı»»Ëã³ÉÌìÊı
+            // ç›¸å‡çš„å·®æ•°æ¢ç®—æˆå¤©æ•°
 
             int_day = Math.floor(time_distance / 86400000);
 
             time_distance -= int_day * 86400000;
 
 
-            // Ïà¼õµÄ²îÊı»»Ëã³ÉĞ¡Ê±
+            // ç›¸å‡çš„å·®æ•°æ¢ç®—æˆå°æ—¶
 
             int_hour = Math.floor(time_distance / 3600000);
 
             time_distance -= int_hour * 3600000;
 
 
-// Ïà¼õµÄ²îÊı»»Ëã³É·ÖÖÓ
+// ç›¸å‡çš„å·®æ•°æ¢ç®—æˆåˆ†é’Ÿ
 
             int_minute = Math.floor(time_distance / 60000);
 
             time_distance -= int_minute * 60000;
 
 
-            // Ïà¼õµÄ²îÊı»»Ëã³ÉÃëÊı
+            // ç›¸å‡çš„å·®æ•°æ¢ç®—æˆç§’æ•°
 
             int_second = Math.floor(time_distance / 1000);
 
 
-            // ÅĞ¶ÏĞ¡Ê±Ğ¡ÓÚ10Ê±£¬Ç°Ãæ¼Ó0½øĞĞÕ¼Î»
+            // åˆ¤æ–­å°æ—¶å°äº10æ—¶ï¼Œå‰é¢åŠ 0è¿›è¡Œå ä½
 
             if (int_hour < 10) {
             int_hour = "0" + int_hour;
         }
 
 
-// ÅĞ¶Ï·ÖÖÓĞ¡ÓÚ10Ê±£¬Ç°Ãæ¼Ó0½øĞĞÕ¼Î»     
+// åˆ¤æ–­åˆ†é’Ÿå°äº10æ—¶ï¼Œå‰é¢åŠ 0è¿›è¡Œå ä½     
 
             if(int_minute < 10)
 
@@ -103,7 +102,7 @@
 
 
 
-            // ÅĞ¶ÏÃëÊıĞ¡ÓÚ10Ê±£¬Ç°Ãæ¼Ó0½øĞĞÕ¼Î»
+            // åˆ¤æ–­ç§’æ•°å°äº10æ—¶ï¼Œå‰é¢åŠ 0è¿›è¡Œå ä½
 
             if(int_second < 10)
 
@@ -111,7 +110,7 @@
 
 
 
-// ÏÔÊ¾µ¹¼ÆÊ±Ğ§¹û      
+// æ˜¾ç¤ºå€’è®¡æ—¶æ•ˆæœ      
 
             time_day.innerHTML = int_day;
 
@@ -125,9 +124,9 @@
 
         }else{
 
-//Èç¹ûÄúÏëÔÚ»î¶¯½áÊøºóÌáÊ¾Ê²Ã´ĞÅÏ¢£¬¾ÍĞ´ÔÚÏÂ±ßµÄµ¥ÒıºÅÄÚ
+//å¦‚æœæ‚¨æƒ³åœ¨æ´»åŠ¨ç»“æŸåæç¤ºä»€ä¹ˆä¿¡æ¯ï¼Œå°±å†™åœ¨ä¸‹è¾¹çš„å•å¼•å·å†…
 
-            times_container.innerHTML='¶Ô²»Æğ£¬»î¶¯½áÊø£¬µ¹¼ÆÊ±Íê±Ï!!';
+            times_container.innerHTML='å¯¹ä¸èµ·ï¼Œæ´»åŠ¨ç»“æŸï¼Œå€’è®¡æ—¶å®Œæ¯•!!';
 
         }
 
