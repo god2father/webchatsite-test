@@ -181,14 +181,15 @@
         ele_hour.textContent = result_h+"小时";
         ele_min.textContent = result_m+"分钟";
         ele_sec.textContent =result_s+"秒";
-        if(result_time>=0){
-            setTimeout("cont_time()",1000)
-        }else{
-            ele_day.textContent ="Time Out";
-            ele_hour.textContent ="";
-            ele_min.textContent = "";
-            ele_sec.textContent ="";
-        }
+        setTimeout("cont_time()",1000)
+//        if(result_time>=0){
+//            setTimeout("cont_time()",1000)
+//        }else{
+//            ele_day.textContent ="Time Out";
+//            ele_hour.textContent ="";
+//            ele_min.textContent = "";
+//            ele_sec.textContent ="";
+//        }
     }
 
 </script>
