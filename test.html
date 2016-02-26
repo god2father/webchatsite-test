@@ -111,12 +111,22 @@
                 transform: scale(2);
             }
         }
+        #test-p{
+            display: block;
+            clear: both;
+            width: 100%;
+            background: #3c763d;
+            margin: 10px auto;
+            font-size: 60px;
+            color: #fff;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <section id="test" >
     <div class="myfirst">
-        <a href="javascript:0">test</a>
+        <a href="javascript:0">test</a><input type="checkbox" style="-webkit-appearance:none; resize: none;outline: none">
         <!--<img src="images/line-go.png">-->
     </div>
 </section>
@@ -126,6 +136,9 @@
             <strong  id="min">00分钟</strong>
             <strong  id="sec">00秒</strong>
 </div>
+<section>
+    <p id="test-p">``````````````````````</p>
+</section>
 <script src="js/jquery-1.11.3.min.js"></script>
 <!--<script>-->
     <!--$("#test").animate({-->
@@ -134,6 +147,38 @@
     <!--},8000)-->
 <!--</script>-->
 <script>
+//    $("#test-p").click(function(){
+//      this.innerHTML="test"
+//    });
+//$.post("http://n05htrzua0.proxy.qqbrowser.cc/demo.php",
+//        {
+//            biz_order_id : "SN123456"
+//        },
+//        function(data){
+//          alert(data);
+//        });
+//
+$(function(){
+    $.post("http://n05htrzua0.proxy.qqbrowser.cc/demo.php",
+            {
+                biz_order_id:"SN123456"
+            },
+            function(data){
+                alert(data);
+            }
+    )
+});
+
+
+
+
+
+
+
+
+
+
+//    倒计时
     setTimeout("cont_time()",1000);
     // 首先设定一个结束时间,时间通过new Date()来进行创建. 这样才能够计算倒计时的时间.
     var end_time=new Date("2016/02/23 13:44:50");
